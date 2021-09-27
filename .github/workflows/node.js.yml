@@ -36,11 +36,11 @@ jobs:
       uses: appleboy/ssh-action@v0.1.4
       with:
          host: ${{ secrets.SSH_HOST }}
-         username: ${{ secrets.SSH_USERNAME }}
+         username: root
          key: ${{ secrets.SSH_KEY }}
          port: ${{ secrets.SSH_PORT }}
          script: |
-          cd ~/node-github-demo
+          cd /home/john/node-github-demo
           git pull origin main
           npm install --production
           pm2 restart node-app
